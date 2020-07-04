@@ -38,11 +38,13 @@ extension ViewController{
                     catch {print("Error parsing JSON")}
                 }
             }
-            }
+        }
         task.resume()
-            //Update label
+        
+        //Update label
         currentValueLabel.text = "Current value: \(ConstantsForApp.results.last?.EUR ?? 0.0)"
         createNewEntry()
+        chartView.notifyDataSetChanged()
         setData()
         }
     

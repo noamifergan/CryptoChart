@@ -17,10 +17,8 @@ class ViewController: UIViewController {
     let currentValueLabel = UILabel()
     let refreshButton = UIButton()
     let chartView = LineChartView()
-    var entries = [ChartDataEntry]()
-    var dates = [String]()
     var timer = Timer()
-    let realm = try! Realm()
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -34,6 +32,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         chartView.delegate = self
         setChartView()
+        fetchData()
         setCurrentValueLabel()
         setRefreshButton()
         networkCall()
@@ -50,7 +49,7 @@ class ViewController: UIViewController {
         chartView.leftAxis.drawGridLinesEnabled = false
         chartView.xAxis.drawGridLinesEnabled = false
         chartView.leftAxis.labelFont = .boldSystemFont(ofSize: 12)
-        chartView.leftAxis.setLabelCount(6, force: false)
+        chartView.leftAxis.setLabelCount(6, force: true)
         chartView.leftAxis.spaceTop = 3
         chartView.leftAxis.spaceBottom = 0.5
         chartView.xAxis.labelPosition = .bottomInside
@@ -100,7 +99,10 @@ class ViewController: UIViewController {
         ])
     }
     
+
     
+
+
 
 
 }

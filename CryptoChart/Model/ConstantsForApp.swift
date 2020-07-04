@@ -9,8 +9,10 @@
 import UIKit
 import Charts
 
-struct ConstantsForApp {
-    static var results = [apiResult]()    
+struct ConstantsForApp:Codable {
+    static var results = [apiResult]()
+    static var entries:Array = [ChartDataEntry]()
+    static var dates:[String] = []
 }
 
 struct apiResult:Codable {

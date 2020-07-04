@@ -7,7 +7,7 @@ target 'CryptoChart' do
 
   # Pods for CryptoChart
 
-pod 'Charts'
+pod 'Charts','~> 3.2.2'
 pod 'RealmSwift'
 
 
